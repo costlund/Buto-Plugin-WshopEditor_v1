@@ -1,0 +1,13 @@
+file_upload_data:
+  url: 'formupload?_time=1&dir='
+  max_size: 5000000
+  accept:
+    - jpg
+  file_types:
+    - 'image/jpeg'
+  dir: '[web_dir]/data/theme/[theme]/wshop/product' 
+  web_dir: '/data/theme/[theme]/wshop/product'
+  name: test.jpg
+  success:
+    script: "alert('success...');"
+        

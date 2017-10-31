@@ -1,0 +1,12 @@
+content:
+  -
+    type: div
+    attribute:
+      class: row
+    innerHTML:
+      -
+        type: div
+        attribute:
+          class: col-sm-12 responsive
+          id: content
+        innerHTML:

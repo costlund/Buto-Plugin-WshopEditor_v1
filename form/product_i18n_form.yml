@@ -1,0 +1,30 @@
+url: 'product_i18n_capture'
+ajax: true
+submit_value: Save
+id: frm_account_form
+items:
+  product_id:
+    type: hidden
+    label: product_id
+  language:
+    type: hidden
+    label: language
+    mandatory: true
+  name:
+    type: varchar
+    label: Name
+    mandatory: true
+  description:
+    type: text
+    label: Description
+    mandatory: true
+  description_more:
+    type: text
+    label: Description (more)
+    mandatory: true
+render:
+  plugin: 'wshop/editor_v1'
+  method: frm_product_i18n_form_render
+capture:
+  plugin: 'wshop/editor_v1'
+  method: frm_product_i18n_form_capture

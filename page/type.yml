@@ -1,0 +1,46 @@
+content:
+  -
+    type: h1
+    innerHTML: 'globals:sys/settings/plugin/wshop/editor_v1/type/id'
+  -
+    type: div
+    attribute:
+      class: list-group
+    innerHTML:
+      -
+        type: p
+        attribute:
+          class: list-group-item
+        innerHTML: 
+          -
+            type: text
+            innerHTML: 'Sort: '
+          -
+            type: text
+            innerHTML: 'globals:sys/settings/plugin/wshop/editor_v1/type/sort'
+      -
+        type: p
+        attribute:
+          class: list-group-item
+        innerHTML:
+          -
+            type: a
+            attribute:
+              class: btn btn-default
+              ws_t_id: 'globals:sys/settings/plugin/wshop/editor_v1/type/id'
+              onclick: "PluginWfBootstrapjs.modal({id: 'modal_type_form', url: 'type_form/ws_t_id/'+this.getAttribute('ws_t_id'), lable: 'Type'});"
+            innerHTML: Edit
+          -
+            type: button
+            attribute:
+              class: btn btn-default
+              ws_t_id: 'globals:sys/settings/plugin/wshop/editor_v1/type/id'
+              onclick: "PluginWfBootstrapjs.modal({id: 'modal_type_form', url: 'type_delete_confirm/ws_t_id/'+this.getAttribute('ws_t_id'), lable: 'Type'});"
+            innerHTML: Delete
+  -
+    type: div
+    attribute:
+      id: language
+    innerHTML: 
+    
+    

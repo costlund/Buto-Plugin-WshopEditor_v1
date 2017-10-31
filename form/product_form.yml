@@ -1,0 +1,43 @@
+url: 'product_capture'
+ajax: true
+submit_value: Save
+id: frm_account_form
+items:
+  ws_p_id:
+    type: hidden
+    label: ws_p_id
+  id:
+    type: varchar
+    label: ID
+    mandatory: true
+    info:
+      text: 'Be careful to change id if pages are already indexed by search engines. They should contain words who is important for indexing. Only a-z, A-Z characters and underscore is allowed.'
+    validator:
+      -
+        plugin: wshop/editor_v1
+        method: validate_product_id
+      -
+        plugin: validate/string
+        method: validate_characters
+  product_type_id:
+    type: varchar
+    label: Type
+    mandatory: true
+    option:
+      '': ''
+    info:
+      text: 'Type of product.'
+  sort:
+    type: varchar
+    label: Sort
+    mandatory: true
+    validator:
+      -
+        plugin: wf/form_v2
+        method: validate_numeric
+render:
+  plugin: 'wshop/editor_v1'
+  method: frm_product_form_render
+capture:
+  plugin: 'wshop/editor_v1'
+  method: frm_product_form_capture

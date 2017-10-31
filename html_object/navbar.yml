@@ -1,0 +1,114 @@
+settings:
+  name: 'Navbar'
+content:
+  -
+    type: nav
+    attribute:
+      class: 'navbar navbar-default'
+    innerHTML:
+      0:
+        type: div
+        attribute:
+          class: navbar-header
+        innerHTML:
+          -
+            type: button
+            attribute:
+              type: button
+              class: 'navbar-toggle collapsed'
+              data-toggle: collapse
+              data-target: '#abcd'
+              aria-expanded: 'false'
+            innerHTML:
+              0:
+                type: span
+                attribute:
+                  class: icon-bar
+              1:
+                type: span
+                attribute:
+                  class: icon-bar
+              3:
+                type: span
+                attribute:
+                  class: icon-bar
+          -
+            type: a
+            attribute:
+              class: navbar-brand
+              href: '/'
+            innerHTML: WshopEditor
+      2:
+        type: div
+        settings:
+          disabled: false
+        attribute:
+          class: 'collapse navbar-collapse'
+          id: 'abcd'
+        innerHTML:
+          -
+            type: ul
+            attribute:
+              class: 'nav navbar-nav'
+            innerHTML:
+              -
+                type: li
+                innerHTML:
+                  -
+                    type: a
+                    attribute:
+                      onclick: "PluginWfAjax.load('start_content', 'products');return false;"
+                    innerHTML: 'Products'
+              -
+                type: li
+                innerHTML:
+                  -
+                    type: a
+                    attribute:
+                      onclick: "PluginWfAjax.load('start_content', 'types');return false;"
+                    innerHTML: 'Types'
+              -
+                type: li
+                attribute:
+                  class: dropdown
+                innerHTML:
+                  -
+                    type: a
+                    attribute:
+                      class: dropdown-toggle
+                      data-toggle: dropdown
+                      role: button
+                      aria-haspopup: 'true'
+                      aria-expanded: 'false'
+                    innerHTML:
+                      -
+                        type: span
+                        innerHTML: Add
+                      -
+                        type: span
+                        attribute:
+                          class: caret
+                  -
+                    type: ul
+                    attribute:
+                      class: dropdown-menu
+                    innerHTML:
+                      -
+                        type: li
+                        innerHTML:
+                          -
+                            type: a
+                            innerHTML: Product
+                            attribute:
+                              onclick: "PluginWfBootstrapjs.modal({id: 'modal_product_form', url: 'product_form', lable: 'Product'});"
+                      -
+                        type: li
+                        innerHTML:
+                          -
+                            type: a
+                            innerHTML: Type
+                            attribute:
+                              onclick: "PluginWfBootstrapjs.modal({id: 'modal_type_form', url: 'type_form', lable: 'Type'});"
+            
+
+

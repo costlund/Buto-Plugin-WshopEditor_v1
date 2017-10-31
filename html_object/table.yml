@@ -1,0 +1,35 @@
+type: table
+attribute:
+  class: table table-hover
+  id: table
+innerHTML:
+  -
+    type: thead
+    innerHTML:
+      -
+        type: tr
+        attribute:
+          id: thead_tr
+        innerHTML:
+  -
+    type: tbody
+    attribute:
+      id: tbody
+    innerHTML:
+  -
+    type: widget
+    data:
+      plugin: datatable/datatable_1_10_16
+      method: run
+      data:
+        id: table
+        json:
+          paging: true
+          iDisplayLength: 10
+          ordering: true
+          info: true
+          searching: true
+          order:
+            -
+              - 0
+              - asc

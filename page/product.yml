@@ -1,0 +1,57 @@
+content:
+  -
+    type: h1
+    innerHTML: 'globals:sys/settings/plugin/wshop/editor_v1/product/id'
+  -
+    type: div
+    attribute:
+      class: list-group
+    innerHTML:
+      -
+        type: p
+        attribute:
+          class: list-group-item
+        innerHTML: 
+          -
+            type: text
+            innerHTML: 'Type: '
+          -
+            type: text
+            innerHTML: 'globals:sys/settings/plugin/wshop/editor_v1/product/product_type_id'
+      -
+        type: p
+        attribute:
+          class: list-group-item
+        innerHTML: 
+          -
+            type: text
+            innerHTML: 'Sort: '
+          -
+            type: text
+            innerHTML: 'globals:sys/settings/plugin/wshop/editor_v1/product/sort'
+      -
+        type: p
+        attribute:
+          class: list-group-item
+        innerHTML:
+          -
+            type: a
+            attribute:
+              class: btn btn-default
+              ws_p_id: 'globals:sys/settings/plugin/wshop/editor_v1/product/id'
+              onclick: "PluginWfBootstrapjs.modal({id: 'modal_product_form', url: 'product_form/ws_p_id/'+this.getAttribute('ws_p_id'), lable: 'Product'});"
+            innerHTML: Edit
+          -
+            type: button
+            attribute:
+              class: btn btn-default
+              ws_p_id: 'globals:sys/settings/plugin/wshop/editor_v1/product/id'
+              onclick: "PluginWfBootstrapjs.modal({id: 'modal_product_form', url: 'product_delete_confirm/ws_p_id/'+this.getAttribute('ws_p_id'), lable: 'Product'});"
+            innerHTML: Delete
+  -
+    type: div
+    attribute:
+      id: language
+    innerHTML: 
+    
+    

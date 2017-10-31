@@ -1,0 +1,11 @@
+file_upload_data:
+  id: my_upload_form
+  url: 'formupload?_time=1&dir='
+  max_size: 5000000
+  accept: jpg
+  file_type: 'image/jpeg'
+  dir: '[web_dir]/data/theme/[theme]/wshop/product'
+  web_dir: '/data/theme/[theme]/wshop/product'
+  name: test.jpg
+  success:
+    script: "PluginWfAjax.update('product_images');"

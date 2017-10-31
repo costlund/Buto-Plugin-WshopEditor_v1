@@ -1,0 +1,21 @@
+content:
+  -
+    type: p
+    innerHTML: Are you sure to delete?
+  -
+    type: p
+    innerHTML:
+      -
+        type: button
+        attribute:
+          class: btn btn-warning
+          ws_t_id: 'globals:sys/settings/plugin/wshop/editor_v1/type/id'
+          onclick: "PluginWfAjax.callbackjson('type_delete/ws_t_id/'+this.getAttribute('ws_t_id'));"
+        innerHTML: Yes
+      -
+        type: button
+        attribute:
+          class: btn btn-default
+          data-dismiss: modal
+        innerHTML: No
+      

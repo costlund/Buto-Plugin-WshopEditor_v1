@@ -1,0 +1,228 @@
+
+types:
+  sql: |
+    select 
+    wshop_product_type.id,
+    wshop_product_type.sort,
+    (select name from wshop_product_type_i18n where product_type_id=wshop_product_type.id and language=?) as name
+    from wshop_product_type
+    order by wshop_product_type.id
+    ;
+  select:
+    - id
+    - sort
+    - name
+  params:
+    language:
+      type: s
+      value: en
+      
+type_update:
+  sql: 'update wshop_product_type set sort=?, id=? where id=?;'
+  params:
+    sort:
+      type: i
+    id:
+      type: s
+    ws_t_id:
+      type: s
+type_insert:
+  sql: 'insert into wshop_product_type (id) values (?);'
+  params:
+    ws_t_id:
+      type: s
+type_exist:
+  sql: |
+    select 
+    id
+    from wshop_product_type
+    where wshop_product_type.id=?
+    ;
+  select:
+    - id
+  params:
+    id:
+      type: s
+type_delete:
+  sql: 'delete from wshop_product_type where id=?;'  
+  params:
+    id:
+      type: s
+type_i18n:
+  sql: 'select name, description, description_more from wshop_product_type_i18n where product_type_id=? and language=?;'
+  select:
+    - name
+    - description
+    - description_more
+  params:
+    product_type_id:
+      type: s
+    language:
+      type: s
+type_i18n_update:
+  sql: 'update wshop_product_type_i18n set name=?, description=?, description_more=? where product_type_id=? and language=?;'
+  params:
+    name:
+      type: s
+    description:
+      type: s
+    description_more:
+      type: s
+    product_type_id:
+      type: s
+    language:
+      type: s
+type_i18n_insert:
+  sql: 'insert into wshop_product_type_i18n (product_type_id, language) values (?, ?);'
+  params:
+    product_type_id:
+      type: s
+    language:
+      type: s
+      
+      
+
+products:
+  sql: |
+    select 
+    wshop_product.id,
+    wshop_product.product_type_id,
+    wshop_product.sort,
+    (select name from wshop_product_i18n where product_id=wshop_product.id and language=?) as name
+    from wshop_product
+    order by wshop_product.id
+    ;
+  select:
+    - id
+    - product_type_id
+    - sort
+    - name
+  params:
+    language:
+      type: s
+      value: en
+products_by_type:
+  sql: |
+    select 
+    id
+    from wshop_product
+    where product_type_id=?
+    order by id
+    ;
+  select:
+    - id
+  params:
+    product_type_id:
+      type: s
+      value: _
+ws_p_id:
+  sql: |
+    select 
+    wshop_product.id,
+    wshop_product.product_type_id,
+    wshop_product.sort
+    from wshop_product
+    where wshop_product.id=?
+    ;
+  select:
+    - id
+    - product_type_id
+    - sort
+  params:
+    id:
+      type: s
+ws_t_id:
+  sql: |
+    select 
+    wshop_product_type.id,
+    wshop_product_type.sort
+    from wshop_product_type
+    where wshop_product_type.id=?
+    ;
+  select:
+    - id
+    - sort
+  params:
+    id:
+      type: s
+
+product_type:
+  sql: 'select id, (select name from wshop_product_type_i18n where product_type_id=wshop_product_type.id and language=?) as name from wshop_product_type order by id;'
+  select:
+    - id
+    - name
+  params:
+    language:
+      type: s
+      value: en
+product_update:
+  sql: 'update wshop_product set product_type_id=?, sort=?, id=? where id=?;'
+  params:
+    product_type_id:
+      type: s
+    sort:
+      type: i
+    id:
+      type: s
+    ws_p_id:
+      type: s
+product_insert:
+  sql: 'insert into wshop_product (id) values (?);'
+  params:
+    ws_p_id:
+      type: s
+product_exist:
+  sql: |
+    select 
+    id
+    from wshop_product
+    where wshop_product.id=?
+    ;
+  select:
+    - id
+  params:
+    id:
+      type: s
+product_delete:
+  sql: 'delete from wshop_product where id=?;'  
+  params:
+    id:
+      type: s
+  
+  
+product_i18n:
+  sql: 'select name, description, description_more from wshop_product_i18n where product_id=? and language=?;'
+  select:
+    - name
+    - description
+    - description_more
+  params:
+    product_id:
+      type: s
+    language:
+      type: s
+product_i18n_update:
+  sql: 'update wshop_product_i18n set name=?, description=?, description_more=? where product_id=? and language=?;'
+  params:
+    name:
+      type: s
+    description:
+      type: s
+    description_more:
+      type: s
+    product_id:
+      type: s
+    language:
+      type: s
+product_i18n_insert:
+  sql: 'insert into wshop_product_i18n (product_id, language) values (?, ?);'
+  params:
+    product_id:
+      type: s
+    language:
+      type: s
+  
+  
+  
+  
+  
