@@ -16,6 +16,7 @@ class PluginWshopEditor_v1{
       wfPlugin::enable('wf/form_v2');
       wfPlugin::enable('datatable/datatable_1_10_16');
       wfPlugin::enable('upload/file');
+      wfPlugin::enable('twitter/bootstrap335v');
     }
   }
   /**
@@ -278,7 +279,6 @@ class PluginWshopEditor_v1{
     $id = wfArray::get($GLOBALS, 'sys/settings/plugin/wshop/editor_v1/product/id');
     $data = new PluginWfYml('/plugin/wshop/editor_v1/form/formupload.yml', 'file_upload_data');
     $data->set('name', "$id.jpg");
-    //wfHelp::yml_dump($data, true);
     $element = array();
     $element[] = wfDocument::createWidget('wf/formupload', 'upload', $data->get());
     wfDocument::renderElement($element);
@@ -583,7 +583,11 @@ class PluginWshopEditor_v1{
     /**
      * Add i18n.
      */
-    foreach (wfI18n::getLanguages() as $key => $language) {
+    $languages = wfI18n::getLanguages();
+    if(!$languages){
+      exit('PluginWshopEditor_v1 says: Param sys/settings/i18n/languages is not set.');
+    }
+    foreach($languages as $key => $language) {
       $div = wfDocument::createHtmlElement('div', null, array('id' => "type_i18n_$language", 'style' => 'min-height:200px'));
       $page->setById('language', 'innerHTML/', $div);
       $div = wfDocument::createHtmlElement('script', "PluginWfAjax.load('type_i18n_$language', 'type_i18n/language/$language/ws_t_id/$id');");
