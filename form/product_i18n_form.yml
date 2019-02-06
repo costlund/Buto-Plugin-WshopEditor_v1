@@ -14,6 +14,12 @@ items:
     type: varchar
     label: Name
     mandatory: true
+    validator:
+      -
+        plugin: validate/string
+        method: validate_length
+        data:
+          length: 50
   description:
     type: text
     label: Description
@@ -22,6 +28,11 @@ items:
     type: text
     label: Description (more)
     mandatory: true
+  specification:
+    type: text
+    label: Specification
+    info:
+      text: On each row, Xxx:YYY.
 render:
   plugin: 'wshop/editor_v1'
   method: frm_product_i18n_form_render

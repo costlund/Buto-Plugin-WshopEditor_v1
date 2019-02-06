@@ -191,24 +191,27 @@ product_delete:
   
   
 product_i18n:
-  sql: 'select name, description, description_more from wshop_product_i18n where product_id=? and language=?;'
+  sql: 'select name, description, description_more, specification from wshop_product_i18n where product_id=? and language=?;'
   select:
     - name
     - description
     - description_more
+    - specification
   params:
     product_id:
       type: s
     language:
       type: s
 product_i18n_update:
-  sql: 'update wshop_product_i18n set name=?, description=?, description_more=? where product_id=? and language=?;'
+  sql: 'update wshop_product_i18n set name=?, description=?, description_more=?, specification=? where product_id=? and language=?;'
   params:
     name:
       type: s
     description:
       type: s
     description_more:
+      type: s
+    specification:
       type: s
     product_id:
       type: s

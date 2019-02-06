@@ -127,6 +127,7 @@ class PluginWshopEditor_v1{
       wfDocument::createHtmlElement('strong', $rs->get('0/name'), array('class' => 'list-group-item')),
       wfDocument::createHtmlElement('p', $rs->get('0/description'), array('class' => 'list-group-item')),
       wfDocument::createHtmlElement('p', $rs->get('0/description_more'), array('class' => 'list-group-item')),
+      wfDocument::createHtmlElement('p', $rs->get('0/specification'), array('class' => 'list-group-item')),
       wfDocument::createHtmlElement('p', array(wfDocument::createHtmlElement('a', 'Edit', array('class' => 'btn btn-default', 'onclick' => "PluginWfBootstrapjs.modal({id: 'modal_product_i18n_form', url: 'product_i18n_form/ws_p_id/".wfArray::get($GLOBALS, 'sys/settings/plugin/wshop/editor_v1/product/id')."/language/$language', lable: 'Product ($language)'});"))), array('class' => 'list-group-item')),
       ), array('class' => 'list-group'));
     wfDocument::renderElement(array($div));
@@ -357,6 +358,7 @@ class PluginWshopEditor_v1{
     $form->set('items/name/default', $rs->get('0/name'));
     $form->set('items/description/default', $rs->get('0/description'));
     $form->set('items/description_more/default', $rs->get('0/description_more'));
+    $form->set('items/specification/default', $rs->get('0/specification'));
     return $form;
   }
   /**
@@ -440,19 +442,29 @@ class PluginWshopEditor_v1{
    */
   public function frm_product_i18n_form_capture($form){
     $this->init_page();
+    /**
+     * Check if exist.
+     */
     $this->sql->set('product_i18n/params/product_id/value', wfRequest::get('product_id'));
     $this->sql->set('product_i18n/params/language/value', wfRequest::get('language'));
     $rs = $this->executeSQL($this->sql->get('product_i18n'));
     if(!$rs->get('0')){
+      /**
+       * Create.
+       */
       $this->sql->set('product_i18n_insert/params/product_id/value', wfRequest::get('product_id'));
       $this->sql->set('product_i18n_insert/params/language/value', wfRequest::get('language'));
       $this->executeSQL($this->sql->get('product_i18n_insert'));
     }
+    /**
+     * Update
+     */
     $this->sql->set('product_i18n_update/params/product_id/value', wfRequest::get('product_id'));
     $this->sql->set('product_i18n_update/params/language/value', wfRequest::get('language'));
     $this->sql->set('product_i18n_update/params/name/value', wfRequest::get('name'));
     $this->sql->set('product_i18n_update/params/description/value', wfRequest::get('description'));
     $this->sql->set('product_i18n_update/params/description_more/value', wfRequest::get('description_more'));
+    $this->sql->set('product_i18n_update/params/specification/value', wfRequest::get('specification'));
     $this->executeSQL($this->sql->get('product_i18n_update'));
     return array("PluginWfAjax.update('product_i18n_".wfRequest::get('language')."');$('#modal_product_i18n_form').modal('hide');");
   }

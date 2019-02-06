@@ -41,3 +41,15 @@ render:
 capture:
   plugin: 'wshop/editor_v1'
   method: frm_product_form_capture
+elements_below:
+  -
+    type: script
+    innerHTML: |
+      document.getElementById('frm_account_form_id').onchange = function(){
+        for(var i=0;i<1000;i++){
+          this.value = this.value.replace(' ', '_');
+          this.value = this.value.replace('-', '_');
+          this.value = this.value.replace('.', '');
+          this.value = this.value.replace(',', '');
+        }
+      }
