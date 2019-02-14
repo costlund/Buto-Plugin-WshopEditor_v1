@@ -28,6 +28,36 @@ plugin:
   -
     name: validate/string
     version: '1.0'
+  -
+    name: davegandy/fontawesome450
+    version: '1.0'
+  -
+    name: wf/dom
+    version: '1.0'
+  -
+    name: wf/bootstrap
+    version: '1.0'
+  -
+    name: samstephenson/prototype
+    version: '1.0'
+  -
+    name: wf/textareatab
+    version: '1.0'
+  -
+    name: wf/callbackjson
+    version: '1.0'
+  -
+    name: prism/prismjs
+    version: '1.0'
+  -
+    name: wf/onkeypress
+    version: '1.0'
+  -
+    name: wf/bootstrapjs
+    version: '1.0'
+  -
+    name: eternicode/bootstrapdatepicker
+    version: '1.0'
 sys:
   -
     name: mercury
