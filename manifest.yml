@@ -6,13 +6,13 @@ history:
 plugin:
   -
     name: wf/yml
-    version: '1.1'
+    version: 1.2.2
   -
     name: wf/array
-    version: 1.0.1
+    version: 1.2.0
   -
     name: wf/mysql
-    version: 1.4.1
+    version: 1.11.0
   -
     name: wf/form_v2
     version: 1.4
@@ -21,13 +21,13 @@ plugin:
     version: '1.1'
   -
     name: upload/file
-    version: '1.0'
+    version: 1.2.1
   -
     name: twitter/bootstrap335v
-    version: '1.0'
+    version: 1.0.1
   -
     name: validate/string
-    version: '1.0'
+    version: 1.2.0
   -
     name: davegandy/fontawesome450
     version: '1.0'
@@ -39,7 +39,7 @@ plugin:
     version: '1.0'
   -
     name: samstephenson/prototype
-    version: '1.0'
+    version: null
   -
     name: wf/textareatab
     version: '1.0'
@@ -51,13 +51,13 @@ plugin:
     version: '1.0'
   -
     name: wf/onkeypress
-    version: '1.0'
+    version: '1.1'
   -
     name: wf/bootstrapjs
-    version: '1.0'
+    version: '1.6'
   -
     name: eternicode/bootstrapdatepicker
-    version: '1.0'
+    version: null
 sys:
   -
     name: mercury
