@@ -2,9 +2,6 @@ settings:
   path: 'html/innerHTML/body/innerHTML'
   rewrite_globals:
     -
-      key: 'sys/settings/plugin/davegandy/fontawesome450/enabled'
-      value: true
-    -
       key: 'sys/settings/plugin/wf/dom/enabled'
       value: true
     -
@@ -14,16 +11,10 @@ settings:
       key: 'sys/settings/plugin/wf/ajax/enabled'
       value: true
     -
-      key: 'sys/settings/plugin/samstephenson/prototype/enabled'
-      value: true
-    -
       key: 'sys/settings/plugin/wf/textareatab/enabled'
       value: true
     -
       key: 'sys/settings/plugin/wf/callbackjson/enabled'
-      value: true
-    -
-      key: 'sys/settings/plugin/prism/prismjs/enabled'
       value: true
     -
       key: 'sys/settings/plugin/wf/onkeypress/enabled'
@@ -35,11 +26,8 @@ settings:
       key: 'sys/settings/plugin/datatable/datatable_1_10_16/enabled'
       value: true
     -
-      key: 'sys/settings/plugin/eternicode/bootstrapdatepicker/enabled'
+      key: 'sys/settings/plugin/eternicode/bootstrapdatepicker2/enabled'
       value: true
-#    -
-#      key: 'sys/settings/plugin/wf/formupload/enabled'
-#      value: true
     -
       key: 'sys/settings/plugin/upload/file/enabled'
       value: true
@@ -55,23 +43,11 @@ content:
       head:
         type: head
         innerHTML:
-          prototype:
-            type: widget
-            settings:
-              disabled: true
-            data:
-              plugin: 'samstephenson/prototype'
-              method: include
           wf_bootstrap:
             type: widget
             data:
               plugin: 'wf/bootstrapjs'
               method: include               
-          font_awesome_include:
-            type: widget
-            data:
-              plugin: 'davegandy/fontawesome450'
-              method: include
           title:
             type: title
             innerHTML: 'globals:sys/page/settings/title'
@@ -110,13 +86,6 @@ content:
             data:
               plugin: 'wf/callbackjson'
               method: include               
-          prism_prismjs:
-            settings:
-              disabled: false
-            type: widget
-            data:
-              plugin: 'prism/prismjs'
-              method: include               
           onkeypress:
             type: widget
             data:
@@ -137,24 +106,13 @@ content:
           datepicker:
             type: widget
             data:
-              plugin: eternicode/bootstrapdatepicker
+              plugin: eternicode/bootstrapdatepicker2
               method: include                
-#          formupload:
-#            type: widget
-#            data:
-#              plugin: 'wf/formupload'
-#              method: include            
           formupload:
             type: widget
             data:
               plugin: 'upload/file'
               method: include
-#          formupload_1:
-#            type: script
-#            innerHTML: "var plugin_upload_file = new PluginUploadFile();"
-#          formupload_2:
-#            type: script
-#            innerHTML: "var plugin_upload_file = {};"
       body:
         type: body
         innerHTML: 'body...'

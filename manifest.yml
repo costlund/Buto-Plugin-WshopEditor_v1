@@ -1,7 +1,12 @@
-version: '1.0'
+version: 1.1.0
 history:
-  '1.0':
+  1.1.0:
+    date: '2020-11-19'
+    label: Plugin
+    description: 'Remove plugin samstephenson/prototype, prism/prismjs, davegandy/fontawesome450. Upgrade plugin eternicode/bootstrapdatepicker to eternicode/bootstrapdatepicker2.'
+  1.0.0:
     date: '2019-02-05'
+    label: Manifest
     description: 'Manifest created.'
 plugin:
   -
@@ -25,39 +30,6 @@ plugin:
   -
     name: twitter/bootstrap335v
     version: 1.0.1
-  -
-    name: validate/string
-    version: 1.2.1
-  -
-    name: davegandy/fontawesome450
-    version: '1.0'
-  -
-    name: wf/dom
-    version: '1.0'
-  -
-    name: wf/bootstrap
-    version: '1.0'
-  -
-    name: samstephenson/prototype
-    version: null
-  -
-    name: wf/textareatab
-    version: '1.0'
-  -
-    name: wf/callbackjson
-    version: '1.0'
-  -
-    name: prism/prismjs
-    version: '1.0'
-  -
-    name: wf/onkeypress
-    version: '1.1'
-  -
-    name: wf/bootstrapjs
-    version: '1.6'
-  -
-    name: eternicode/bootstrapdatepicker
-    version: null
 sys:
   -
     name: mercury
@@ -66,12 +38,6 @@ sys:
 php:
   - '7.2'
 author: null
-links:
-  Github: 'https://github.com'
+links: null
 description: ''
-third_part_software:
-  -
-    name: null
-    description: null
-    path:
-      - /path/to/files
+third_part_software: null

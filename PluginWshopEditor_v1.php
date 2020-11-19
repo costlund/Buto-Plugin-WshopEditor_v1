@@ -1,6 +1,6 @@
 <?php
 /**
- * Editor for products.
+ * Editor for products..
  */
 class PluginWshopEditor_v1{
   private $settings = null;
