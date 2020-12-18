@@ -17,7 +17,7 @@ plugin:
     version: 1.2.0
   -
     name: wf/mysql
-    version: 1.12.0
+    version: 1.13.0
   -
     name: wf/form_v2
     version: 1.4
