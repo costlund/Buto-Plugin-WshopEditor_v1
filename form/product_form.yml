@@ -41,7 +41,7 @@ render:
 capture:
   plugin: 'wshop/editor_v1'
   method: frm_product_form_capture
-elements_below:
+elements_after:
   -
     type: script
     innerHTML: |
