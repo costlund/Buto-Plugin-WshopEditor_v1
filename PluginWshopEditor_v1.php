@@ -23,7 +23,7 @@ class PluginWshopEditor_v1{
    * 
    */
   private function init_page(){
-    wfArray::set($GLOBALS, 'sys/layout_path', '/plugin/wshop/editor_v1/layout');
+    wfGlobals::setSys('layout_path', '/plugin/wshop/editor_v1/layout');
     if(!wfUser::hasRole("webmaster") && !wfUser::hasRole("webadmin")){
       exit('Role webmaster or webadmin is required!');
     }
